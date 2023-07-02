@@ -1,0 +1,72 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "MS C/C++ Build",
+            "command": "cl.exe",
+            "args": [
+              "/Zi",
+              "/EHsc",
+              "/Fe:",
+              "${fileDirname}\\${fileBasenameNoExtension}.exe",
+              "${file}"
+            ],
+            "problemMatcher": ["$msCompile"],
+            "group": {
+              "kind": "build",
+              "isDefault": true
+            },
+        },
+        {
+            "type": "shell",
+            "label": "GCC Linux C/C++ Build",
+            "command": "/usr/bin/g++",
+            "args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+            "options": {
+              "cwd": "/usr/bin"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+              "kind": "build",
+              "isDefault": true
+            },
+        },
+        {
+            "type": "shell",
+            "label": "Win32 GNU C/C++ Build",
+            "command": "C:\\root\\mingw\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {"cwd": "${workspaceFolder}"},
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Mac Clang C/C++ Build",
+            "command": "C:\\root\\mingw\\bin\\g++.exe",
+            "args": [
+                "-std=c++17",
+                "-stdlib=libc++",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {"cwd": "${workspaceFolder}"},
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
