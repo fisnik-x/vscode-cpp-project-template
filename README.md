@@ -11,7 +11,7 @@ There are plenty of tutorials on how to go about setting up the VS Code Editor f
 * MAC Clang Build (clang++)
 * Linux GNU Build (g++)
 
-> **Note**: Includes `launch.json` for building and debugging.
+> **Note**: Includes `launch.json` for building and debugging. Includes also the `c_cpp_properties.json` for each platform and environment. 
 
 > **Warning**: This has not been tested under MAC or Linux at this point. 
 
